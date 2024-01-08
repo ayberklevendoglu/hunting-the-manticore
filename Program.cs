@@ -10,33 +10,33 @@ Console.WriteLine("Player 2, it is your turn now.");
 
 while (cityHealth > 0 && manticoreHealth > 0)
 {
-    Console.WriteLine("-----------------------------------------------------------");
-    Console.WriteLine($"STATUS: Round: {round} City: {cityHealth}/15 Manticore: {manticoreHealth}/10");
-    Console.WriteLine($"The cannon is expected to deal {CannonDamage(round)} damage this round.");
+    ColoredWriteLine("-----------------------------------------------------------", ConsoleColor.Gray);
+    ColoredWriteLine($"STATUS: Round: {round} City: {cityHealth}/15 Manticore: {manticoreHealth}/10",ConsoleColor.Gray);
+    ColoredWriteLine($"The cannon is expected to deal {CannonDamage(round)} damage this round.",ConsoleColor.Gray);
     int cannonRange = PromptForNumber("Enter desired cannon range: ");
 
-    DisplayAttackResult(cannonRange);
+    DisplayAttackResult(cannonRange,distanceToCity);
 
     round++;
 }
 
-DisplayWinner(cityHealth, manticoreHealth);
+DisplayWinner(manticoreHealth);
 
-void DisplayAttackResult(int cannonRange)
+void DisplayAttackResult(int target,int distance)
 {
-    if (cannonRange == distanceToCity)
+    if (target == distance)
     {
-        Console.WriteLine("That round was a DIRECT HIT!");
+        ColoredWriteLine("That round was a DIRECT HIT!", ConsoleColor.Green);
         manticoreHealth -= CannonDamage(round);
     }
-    else if (cannonRange > distanceToCity)
+    else if (target > distance)
     {
-        Console.WriteLine("That round OVERSHOT the target.");
+        ColoredWriteLine("That round OVERSHOT the target.", ConsoleColor.Red);
         cityHealth--;
     }
     else
     {
-        Console.WriteLine("That round FELL SHORT of the target.");
+        ColoredWriteLine("That round FELL SHORT of the target.", ConsoleColor.Red);
         cityHealth--;
     }
 }
@@ -47,8 +47,8 @@ int PromptForNumber(string message)
     int response = int.Parse(Console.ReadLine());
     while (response > 100 || response <= 0)
     {
-        Console.WriteLine("Please enter a number between 0 and 100");
-        Console.Write(message);
+        ColoredWriteLine("Please enter a number between 0 and 100", ConsoleColor.Red);
+        ColoredWriteLine(message, ConsoleColor.Gray);
         response = int.Parse(Console.ReadLine());
     }
     return response;
@@ -64,14 +64,15 @@ int CannonDamage(int number)
     return damage;
 }
 
-void DisplayWinner(int city,int manticore)
+void DisplayWinner(int monsterHealth)
 {
-    if(manticore == 0 || manticore < 0)
-    {
-        Console.WriteLine("The Manticore has been destroyed! The city of Consolas has been saved!");
-    }else if (city == 0 || city < 0)
-    {
-        Console.WriteLine("The city of Consolas has been destroyed! The Manticore has won!");
-    }
+    if ( monsterHealth <= 0 ) ColoredWriteLine("The Manticore has been destroyed! The city of Consolas has been saved!",ConsoleColor.Green);
+    else ColoredWriteLine("The city of Consolas has been destroyed! The Manticore has won!", ConsoleColor.Red);
+}
+
+void ColoredWriteLine(string text, ConsoleColor color)
+{
+    Console.ForegroundColor = color;
+    Console.WriteLine(text);
 }
 
