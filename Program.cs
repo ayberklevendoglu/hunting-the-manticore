@@ -15,12 +15,21 @@ while (cityHealth > 0 && manticoreHealth > 0)
     Console.WriteLine($"The cannon is expected to deal {CannonDamage(round)} damage this round.");
     int cannonRange = PromptForNumber("Enter desired cannon range: ");
 
+    DisplayAttackResult(cannonRange);
+
+    round++;
+}
+
+DisplayWinner(cityHealth, manticoreHealth);
+
+void DisplayAttackResult(int cannonRange)
+{
     if (cannonRange == distanceToCity)
     {
         Console.WriteLine("That round was a DIRECT HIT!");
         manticoreHealth -= CannonDamage(round);
     }
-    else if(cannonRange > distanceToCity)
+    else if (cannonRange > distanceToCity)
     {
         Console.WriteLine("That round OVERSHOT the target.");
         cityHealth--;
@@ -30,11 +39,7 @@ while (cityHealth > 0 && manticoreHealth > 0)
         Console.WriteLine("That round FELL SHORT of the target.");
         cityHealth--;
     }
-
-    round++;
 }
-
-DisplayWinner(cityHealth, manticoreHealth);
 
 int PromptForNumber(string message)
 {
