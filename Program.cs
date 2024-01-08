@@ -26,17 +26,17 @@ void DisplayAttackResult(int target,int distance)
 {
     if (target == distance)
     {
-        ColoredWriteLine("That round was a DIRECT HIT!", ConsoleColor.Green);
+        ColoredWriteLine("That round was a DIRECT HIT!", ConsoleColor.Cyan);
         manticoreHealth -= CannonDamage(round);
     }
     else if (target > distance)
     {
-        ColoredWriteLine("That round OVERSHOT the target.", ConsoleColor.Red);
+        ColoredWriteLine("That round OVERSHOT the target.", ConsoleColor.DarkMagenta);
         cityHealth--;
     }
     else
     {
-        ColoredWriteLine("That round FELL SHORT of the target.", ConsoleColor.Red);
+        ColoredWriteLine("That round FELL SHORT of the target.", ConsoleColor.DarkMagenta);
         cityHealth--;
     }
 }
@@ -45,6 +45,7 @@ int PromptForNumber(string message)
 {
     Console.Write(message);
     int response = int.Parse(Console.ReadLine());
+
     while (response > 100 || response <= 0)
     {
         ColoredWriteLine("Please enter a number between 0 and 100", ConsoleColor.Red);
@@ -69,6 +70,7 @@ void DisplayWinner(int monsterHealth)
     if ( monsterHealth <= 0 ) ColoredWriteLine("The Manticore has been destroyed! The city of Consolas has been saved!",ConsoleColor.Green);
     else ColoredWriteLine("The city of Consolas has been destroyed! The Manticore has won!", ConsoleColor.Red);
 }
+
 
 void ColoredWriteLine(string text, ConsoleColor color)
 {
