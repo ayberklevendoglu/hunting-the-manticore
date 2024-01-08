@@ -52,16 +52,10 @@ int PromptForNumber(string message)
 int CannonDamage(int number)
 {
     int damage;
-    if (number % 3 == 0 && number % 5 == 0)
-    {
-        damage = 10;
-    } else if (number % 3 == 0 || number % 5 == 0) 
-    { 
-        damage = 3; 
-    }else
-    {
-        damage = 1;
-    }
+    if (number % 3 == 0 && number % 5 == 0) damage = 10;
+    else if (number % 3 == 0 || number % 5 == 0) damage = 3; 
+    else damage = 1;
+
     return damage;
 }
 

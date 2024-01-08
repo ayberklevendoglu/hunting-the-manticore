@@ -1,0 +1,14 @@
+C:\Users\ayber\source\repos\HuntingTheManticore\bin\Debug\net8.0\HuntingTheManticore.exe
+C:\Users\ayber\source\repos\HuntingTheManticore\bin\Debug\net8.0\HuntingTheManticore.deps.json
+C:\Users\ayber\source\repos\HuntingTheManticore\bin\Debug\net8.0\HuntingTheManticore.runtimeconfig.json
+C:\Users\ayber\source\repos\HuntingTheManticore\bin\Debug\net8.0\HuntingTheManticore.dll
+C:\Users\ayber\source\repos\HuntingTheManticore\bin\Debug\net8.0\HuntingTheManticore.pdb
+C:\Users\ayber\source\repos\HuntingTheManticore\obj\Debug\net8.0\HuntingTheManticore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ayber\source\repos\HuntingTheManticore\obj\Debug\net8.0\HuntingTheManticore.AssemblyInfoInputs.cache
+C:\Users\ayber\source\repos\HuntingTheManticore\obj\Debug\net8.0\HuntingTheManticore.AssemblyInfo.cs
+C:\Users\ayber\source\repos\HuntingTheManticore\obj\Debug\net8.0\HuntingTheManticore.csproj.CoreCompileInputs.cache
+C:\Users\ayber\source\repos\HuntingTheManticore\obj\Debug\net8.0\HuntingTheManticore.dll
+C:\Users\ayber\source\repos\HuntingTheManticore\obj\Debug\net8.0\refint\HuntingTheManticore.dll
+C:\Users\ayber\source\repos\HuntingTheManticore\obj\Debug\net8.0\HuntingTheManticore.pdb
+C:\Users\ayber\source\repos\HuntingTheManticore\obj\Debug\net8.0\HuntingTheManticore.genruntimeconfig.cache
+C:\Users\ayber\source\repos\HuntingTheManticore\obj\Debug\net8.0\ref\HuntingTheManticore.dll
